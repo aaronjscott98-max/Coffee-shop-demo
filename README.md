@@ -2,7 +2,7 @@ Tay Tides Coffee Roasters | Artisan Brewing in Dundee
 Tay Tides is a bespoke front-end web application designed for a conceptual high-end coffee roastery. It is a technical showcase of 2026 design trends, moving away from generic templates to provide a high-performance, "Editorial Minimalist" digital experience.
 
 ### 🔗 Project Links
-* **Live Demo**: [View Tay Tides Live](https://your-github-username.github.io/tay-tides/)
+* **Live Demo**: [View Tay Tides Live](http://aaronjscott98-max.github.io/Coffee-shop-demo/)
 * **Developer Portfolio**: [Visit My Portfolio](https://aaronjscott.co.uk/)
 
 Why This Project Matters
