@@ -1,0 +1,815 @@
+:root {
+    --slate: #2d3436;
+    --oat: #f9f7f2;
+    --accent: #b5835a; /* Coffee/Latte Bronze */
+    --glass: rgba(255, 255, 255, 0.75);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--oat);
+    color: var(--slate);
+    line-height: 1.6;
+}
+
+/* Nav & Logo Styling */
+.glass-nav {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    padding: 0.8rem 2.5rem;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* 1. The Container: Positions image and text side-by-side */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* 2. The Logo: Ensures the SVG scales correctly */
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+/* 3. The Text Block: Stacks the title and small text */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #2d3436;
+}
+
+/* 4. The Subtext: Refines the "Coffee Roasters" line */
+.logo-text small {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #b5835a;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a.active{
+    color: var(--accent);
+}
+
+/* --- MOBILE MENU TOGGLE --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--slate);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, var(--oat) 20%, rgba(249, 247, 242, 0.4) 60%, transparent), 
+                url('../images/vadundee.jpg');
+    background-size: cover;
+    background-position: center right;
+}
+
+.hero-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background: var(--accent);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    text-wrap: balance;
+}
+
+h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+    color: rgba(45, 52, 54, 0.8);
+}
+
+/* Buttons */
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* --- PRIMARY BUTTON (Nav & Global) --- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--slate);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid var(--slate);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(181, 131, 90, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Specific Tweak for Navigation Primary Button */
+.nav-links .btn-primary {
+    margin-left: 10px;
+}
+
+.btn-main {
+    padding: 1.2rem 2.5rem;
+    background: var(--slate);
+    color: white;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-main:hover {
+    transform: scale(1.05);
+    background: #000;
+}
+
+/* 1. Base Button Styling */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate);
+    position: relative;
+    padding: 10px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+}
+
+/* 2. The 2026 Underline Style */
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--slate);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    opacity: 0.6;
+}
+
+/* 3. Hover Effects */
+.btn-secondary:hover {
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.btn-secondary:hover::after {
+    transform: scaleX(1);
+    background-color: var(--accent);
+    opacity: 1;
+}
+
+/* 4. Active/Tap State */
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    border-radius: 40px;
+    padding: 50px;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.glass {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.large-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: center;
+}
+
+.large-card h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats-card {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.stats-card h3 {
+    font-size: 4rem;
+    font-family: 'Instrument Serif', serif;
+}
+
+.image-card-1 { background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80'); }
+.image-card-2 { background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80'); }
+
+/* 1. Base Link Styling */
+.inline-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--slate);
+    margin-top: 1.5rem;
+    position: relative;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+}
+
+/* 2. The Animated Underline */
+.inline-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 1.5px;
+    background-color: var(--accent);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. The Hover Effect */
+.inline-link:hover {
+    color: var(--accent);
+}
+
+.inline-link:hover::after {
+    width: 100%;
+}
+
+/* 4. The Arrow Animation */
+.inline-link:hover {
+    transform: translateX(5px);
+}
+
+/* If you want the arrow itself to move separately */
+.inline-link {
+    transition: transform 0.3s ease;
+}
+
+.site-footer {
+    padding: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+/* --- 5. MENU GRID (Bento Style) --- */
+.menu-header {
+    text-align: center;
+    padding: 140px 5% 60px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 0 5% 100px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    padding: 40px;
+    border-radius: 35px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+}
+
+.menu-card.featured {
+    grid-column: span 2;
+}
+
+.category-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-card h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.5rem;
+    margin: 10px 0 25px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.item-name {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.item-info p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+.item-price {
+    font-family: 'Instrument Serif', serif;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+/* Dietary Badges */
+.dietary {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.vg { background: #d4edda; color: #155724; }
+
+/* --- STORY PAGE SPECIFICS --- */
+.story-page {
+    padding-top: 0;
+}
+
+.story-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    align-items: center;
+}
+
+.story-image {
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.story-intro {
+    padding: 10% 15%;
+    margin-left: -100px;
+    border-radius: 40px;
+    z-index: 2;
+}
+
+.story-intro h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 2rem;
+}
+
+/* Pillars Grid */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 100px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pillar-card {
+    padding: 50px;
+    border-radius: 35px;
+    text-align: center;
+}
+
+.pillar-card h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.accent-card {
+    background: var(--slate) !important;
+    color: white;
+}
+
+/* Narrative Section */
+.narrative-section {
+    padding: 150px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.narrative-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.narrative-content h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.narrative-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgba(45, 52, 54, 0.8);
+}
+
+/* --- FIND US PAGE SPECIFICS --- */
+.find-page {
+    padding-top: 120px;
+}
+
+.find-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.location-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: stretch;
+    min-height: 600px;
+}
+
+.info-panel {
+    padding: 60px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.address-block {
+    margin: 40px 0;
+}
+
+.address-block h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ensure the visual container is prepared for the map */
+.location-visual {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    background: #e5e3df;
+}
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: grayscale(0.2) contrast(1.1);
+}
+
+.map-container iframe {
+    filter: invert(10%) hue-rotate(180deg) brightness(95%);
+}
+
+/* Elevate the hours card above the map */
+.hours-card {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hours-card h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.hours-table td {
+    padding: 8px 0;
+}
+
+.hours-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Directions Row */
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.dir-item {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.dir-item:hover {
+    transform: translateY(-5px);
+}
+
+.dir-item .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.dir-item h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dir-item p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .glass-nav {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+        z-index: 2000; 
+    }
+
+    .hero {
+        background-position: 80% center; 
+        padding: 0 5%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-main, .btn-primary {
+        width: 100%; 
+        text-align: center;
+
+    }
+
+    .menu-card.featured { grid-column: span 1; }
+.bento-grid {
+    display: flex; 
+    flex-direction: column;
+    padding: 80px 20px; 
+    gap: 20px;
+}
+
+.grid-item {
+    width: 100%;
+    min-height: 350px; 
+    border-radius: 40px;
+    padding: 40px;
+}
+
+/* Ensure the stats card is high impact */
+.stats-card {
+    min-height: 250px;
+    order: -1; 
+}
+
+/* Make sure images fill their new horizontal space */
+.image-card-1, .image-card-2 {
+    background-size: cover;
+    background-position: center;
+}
+    .story-hero { grid-template-columns: 1fr; height: auto; }
+    .story-image { height: 50vh; }
+    .story-intro { margin: -50px 5% 50px; padding: 50px 30px; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .directions-grid { grid-template-columns: 1fr; }
+    .location-hero { grid-template-columns: 1fr; height: auto; }
+    .location-visual { height: 450px; padding: 15px; order: 2; }
+    .map-container { pointer-events: none; }
+    .location-visual:active .map-container { pointer-events: auto; }
+    .hours-card { padding: 20px; width: 100%; }
+    
+.nav-links {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(249, 247, 242, 0.98);
+        backdrop-filter: blur(15px);
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 10000;
+    }
+
+    .nav-links.active {
+        right: 0 !important;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 10001;
+        position: relative;
+    }
+
+    /* Animation for the bars */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links li {
+        width: auto; 
+        text-align: center;
+    }
+
+    /* Link Styling for Mobile */
+.nav-links a {
+        font-size: 2.2rem;
+        font-family: 'Instrument Serif', serif;
+        padding: 10px;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+
+.nav-links .btn-primary {
+        margin-top: 20px;
+        margin-left: 0 !important;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        padding: 15px 40px;
+        width: auto; 
+        display: inline-block;
+        line-height: 1;
+    }
+
+}
