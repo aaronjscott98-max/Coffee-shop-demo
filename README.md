@@ -6,12 +6,12 @@ Tay Tides is a bespoke front-end web application designed for a conceptual high-
 * **Developer Portfolio**: [Visit My Portfolio](https://aaronjscott.co.uk/)
 
 Why This Project Matters
-In a saturated digital market, a "working" website is no longer enough. This project was built to bridge the "Digital Gap" — the space where a brand's physical beauty is lost in a clunky web experience.
+In a saturated digital market, a "working" website is no longer enough. This project was built to bridge the "Digital Gap", the space where a brand's physical beauty is lost in a clunky web experience.
 
-By using Vanilla JavaScript and Advanced CSS Stacking, Tay Tides provides an "app-like" fluidity that remains lightning-fast, ensuring the user's journey from discovering a roast to finding the shop is friction-free.
+By using Vanilla JavaScript and Advanced CSS Stacking, Tay Tides provides an "app-like" fluidity that remains lightning-fast, ensuring the user's journey from discovering a roast to finding the shop is friction free.
 
 The Professional Edge: Problem Solving
-The true value of a developer is the ability to debug complex interactions. This project highlights four critical "Full-Stack Thinking" moments:
+The true value of a developer is the ability to debug complex interactions. This project highlights four critical "Full Stack Thinking" moments:
 
 1. Architectural Integrity: The JS-HTML Bridge
 The Challenge: A silent failure in the mobile menu due to a naming mismatch between the HTML structure (menutoggle) and the external logic engine (mobile-toggle).
@@ -19,9 +19,9 @@ The Challenge: A silent failure in the mobile menu due to a naming mismatch betw
 The Professional Fix: I harmonised the DOM identifiers and implemented a DOMContentLoaded wrapper. This ensures the script is robust and prevents "Race Conditions" where the code tries to run before the browser is ready.
 
 2. Intelligent Data Flow: The Bento Grid Fix
-The Challenge: High-impact "Bento Box" layouts often collapse on mobile, squashing content and ruining the brand narrative.
+The Challenge: High impact "Bento Box" layouts often collapse on mobile, squashing content and ruining the brand narrative.
 
-The Professional Fix: I engineered a responsive override that transitions the grid into a single-column flex-stack. I used the CSS order property to ensure Value Propositions, such as the 100% Compostable stat, are prioritised visually over decorative imagery.
+The Professional Fix: I engineered a responsive override that transitions the grid into a single column flex-stack. I used the CSS order property to ensure Value Propositions, such as the 100% Compostable stat, are prioritised visually over decorative imagery.
 
 3. User Protection: Solving the "Scroll Trap"
 The Challenge: Interactive elements like Google Maps often hijack a user's touch-scroll on mobile, making it impossible to reach the footer.
